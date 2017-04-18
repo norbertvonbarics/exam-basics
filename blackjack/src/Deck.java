@@ -7,12 +7,15 @@ public class Deck {
   private int Hearts = 0;
   private int Spades = 0;
 
+
   List<String> deck = new ArrayList<>();
   private final List<String> CARDVALUES = new ArrayList<>(
           Arrays.asList("2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"));
 
   private final List<String> CARDCOLORS = new ArrayList<>(
           Arrays.asList("Clubs", "Diamonds", "Hearts", "Spades"));
+
+  int randomNumber = (int) (Math.random() * deck.size());
 
   @Override
   public String toString() {
@@ -33,7 +36,6 @@ public class Deck {
     }
 
     System.out.println(deck);
-    System.out.println(deck.get(2).substring(deck.get(3).length() - 5));
     for (int k = 0; k < deck.size(); k++) {
       String color;
       if (deck.get(k).substring(deck.get(k).length() - 5).equals("Clubs")) {
@@ -46,14 +48,26 @@ public class Deck {
         Hearts++;
       }
     }
-    System.out.println(deck.size() + " Cards - " + Clubs + " Clubs, " + Diamonds + " Diamonds, " + Hearts + " Hearts, "+ Spades + "  Spades");
+    printDeck();
     draw(deck);
-    System.out.println(deck.size() + " Cards - " + Clubs + " Clubs, " + Diamonds + " Diamonds, " + Hearts + " Hearts, "+ Spades + "  Spades");
+    if (deck.get(randomNumber).substring(deck.get(randomNumber).length() - 5).equals("Clubs")) {
+      Clubs--;
+    } else if (deck.get(randomNumber).substring(deck.get(randomNumber).length() - 6).equals("Spades")) {
+      Spades--;
+    } else if (deck.get(randomNumber).substring(deck.get(randomNumber).length() - 8).equals("Diamonds")) {
+      Diamonds--;
+    } else if (deck.get(randomNumber).substring(deck.get(randomNumber).length() - 6).equals("Hearts")) {
+      Hearts--;
+    }
+    deck.remove(randomNumber);
+    printDeck();
   }
 
   void draw (List deck) {
-    int randomNumber = (int) (Math.random() * deck.size());
     System.out.println(deck.get(randomNumber));
-    deck.remove(randomNumber);
+  }
+
+  void printDeck(){
+    System.out.println(deck.size() + " Cards - " + Clubs + " Clubs, " + Diamonds + " Diamonds, " + Hearts + " Hearts, "+ Spades + "  Spades");
   }
 }
