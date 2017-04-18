@@ -17,11 +17,6 @@ public class Deck {
 
   int randomNumber = (int) (Math.random() * deck.size());
 
-  @Override
-  public String toString() {
-    return super.toString();
-  }
-
   public Deck(int cardNumber) {
     this.cardNumber = cardNumber;
 
