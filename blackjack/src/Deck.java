@@ -56,6 +56,9 @@ public class Deck {
     }
     deck.remove(randomNumber);
     printDeck();
+    System.out.println(deck);
+    shuffleDeck(deck);
+    System.out.println(deck);
   }
 
   void draw (List deck) {
@@ -64,5 +67,9 @@ public class Deck {
 
   void printDeck(){
     System.out.println(deck.size() + " Cards - " + Clubs + " Clubs, " + Diamonds + " Diamonds, " + Hearts + " Hearts, "+ Spades + "  Spades");
+  }
+
+  void shuffleDeck(List deck) {
+    Collections.shuffle(deck);
   }
 }
