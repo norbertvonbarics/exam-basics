@@ -15,8 +15,8 @@ public class Copy {
 
 
   public static void main(String[] args) {
-    source = args[0];
-    destination = args[1];
+    //source = args[0];
+   //destination = args[1];
     Ascii logo = new Ascii();
     if (args.length == 0) {
       logo.printAscii();
@@ -26,6 +26,8 @@ public class Copy {
       logo.printAscii();
       logo.printUsage();
     } else if (args.length == 2) {
+      source = args[0];
+      destination = args[1];
       List<String> file = readFiles();
       readFiles();
       writeToFile(file);
