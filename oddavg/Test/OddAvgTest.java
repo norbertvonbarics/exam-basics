@@ -7,7 +7,7 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 public class OddAvgTest {
-  OddAvg test = new OddAvg();
+  private OddAvg test = new OddAvg();
 
   @Test
   public void test1() throws Exception {

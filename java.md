@@ -36,15 +36,16 @@ The application is accepted if:
 
 #### Your answer:
 [add your answer here]   
-1:   
-2:   
-3:   
-4:   
-5:   
-6:   
-7:   
-8:   
+1:   signature
+2:   return type
+3:   method name
+4:   argument type
+5:   argument variable
+6:   local variable
+7:   method body
+8:   return statement
 
 ### What is the constructor? When it is used? [2p]
 #### Your answer:
-[add your answer here]
+[It is creating an instance of a class. We use constructor when we want ensure that our objects of a class are born valid, 
+so we can use constructor to initialize an object. ]
